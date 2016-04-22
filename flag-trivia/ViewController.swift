@@ -10,16 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var highScoreLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        startBtn.layer.cornerRadius = startBtn.frame.width / 2
+        startBtn.clipsToBounds = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(animated: Bool) {
+        highScoreLbl.text = "\(Game().highScore)"
     }
-
 
 }
 
